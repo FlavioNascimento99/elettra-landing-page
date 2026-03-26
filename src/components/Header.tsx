@@ -1,11 +1,8 @@
 import { Menu, MessageCircle, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-interface HeaderProps {
-  onMobileMenuOpen?: () => void;
-}
 
-export default function Header({ onMobileMenuOpen }: HeaderProps) {
+export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
