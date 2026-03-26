@@ -1,13 +1,48 @@
 import { motion } from 'framer-motion';
-import { ImageIcon } from 'lucide-react';
+import projetoSubestacao from '../assets/projeto_subestacao.jpg';
+import solarResidencial from '../assets/solar_residencial.jpg';
+import redeEletrica from '../assets/rede_eletrica.png';
+import obraCivil from '../assets/obra_civil.jpg';
+import automacaoIndustrial from '../assets/automacao_industrial.jpg';
+import segurancaTrabalho from '../assets/seguranca_trabalho.jpg';
 
-const portfolioPlaceholders = [
-  { id: 1, title: 'Projeto de Subestação', category: 'Infraestrutura' },
-  { id: 2, title: 'Instalação Solar Residencial', category: 'Energia Renovável' },
-  { id: 3, title: 'Ampliação de Rede Elétrica', category: 'Distribuição' },
-  { id: 4, title: 'Obra Civil Integrada', category: 'Construção' },
-  { id: 5, title: 'Sistema de Automação Industrial', category: 'Automação' },
-  { id: 6, title: 'Auditoria de Segurança do Trabalho', category: 'Segurança' },
+const portfolioProjects = [
+  { 
+    id: 1, 
+    title: 'Projeto de Subestação', 
+    category: 'Infraestrutura',
+    image: projetoSubestacao
+  },
+  { 
+    id: 2, 
+    title: 'Instalação Solar Residencial', 
+    category: 'Energia Renovável',
+    image: solarResidencial
+  },
+  { 
+    id: 3, 
+    title: 'Ampliação de Rede Elétrica', 
+    category: 'Distribuição',
+    image: redeEletrica
+  },
+  { 
+    id: 4, 
+    title: 'Obra Civil Integrada', 
+    category: 'Construção',
+    image: obraCivil
+  },
+  { 
+    id: 5, 
+    title: 'Sistema de Automação Industrial', 
+    category: 'Automação',
+    image: automacaoIndustrial
+  },
+  { 
+    id: 6, 
+    title: 'Auditoria de Segurança do Trabalho', 
+    category: 'Segurança',
+    image: segurancaTrabalho
+  },
 ];
 
 export default function PortfolioSection() {
@@ -55,17 +90,21 @@ export default function PortfolioSection() {
             variants={containerVariants}
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            {portfolioPlaceholders.map((project) => (
+            {portfolioProjects.map((project) => (
               <motion.div
                 key={project.id}
                 variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ y: -8 }}
                 className="group relative overflow-hidden rounded-xl bg-white border border-neutral-border cursor-pointer"
               >
-                {/* Placeholder Image Area */}
-                <div className="aspect-video bg-gradient-to-br from-primary-light to-blue-100 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-20 group-hover:translate-x-full transition-transform duration-700"></div>
-                  <ImageIcon className="w-12 h-12 text-primary-main/40" />
+                {/* Image Area */}
+                <div className="relative overflow-hidden bg-neutral-light">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
                 </div>
 
                 {/* Content */}
@@ -76,16 +115,6 @@ export default function PortfolioSection() {
                     </h3>
                   </div>
                   <p className="text-sm text-secondary-green font-semibold">{project.category}</p>
-                  <p className="text-xs text-neutral-dark/50 mt-3">
-                    Adicionar imagens e detalhes do projeto
-                  </p>
-                </div>
-
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-primary-dark/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <button className="px-6 py-2 bg-white text-primary-dark font-semibold rounded-lg hover:bg-neutral-light transition-colors">
-                    Ver Detalhes
-                  </button>
                 </div>
               </motion.div>
             ))}
@@ -97,13 +126,13 @@ export default function PortfolioSection() {
             className="mt-12 text-center"
           >
             <p className="text-neutral-dark/70 mb-4">
-              Portfolio completo em desenvolvimento. Galeria será atualizada com seus projetos mais recentes.
+              Veja alguns dos nossos projetos mais recentes. Conheça melhor nosso trabalho e qualidade de execução.
             </p>
             <a
               href="#contact"
               className="inline-block btn-primary"
             >
-              Solicitar Portfolio Completo
+              Solicitar Orçamento
             </a>
           </motion.div>
         </motion.div>

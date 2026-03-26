@@ -157,13 +157,6 @@ export default function ContactSection() {
                   <MessageCircle size={20} />
                   <span>WhatsApp</span>
                 </a>
-                <a
-                  href="mailto:wagnerrclemente@gmail.com"
-                  className="flex items-center justify-center space-x-2 btn-secondary w-full"
-                >
-                  <Mail size={20} />
-                  <span>Enviar Email</span>
-                </a>
               </motion.div>
             </motion.div>
 

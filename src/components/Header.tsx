@@ -69,7 +69,7 @@ export default function Header({ onMobileMenuOpen }: HeaderProps) {
               href="https://wa.me/5583996070404?text=Olá%21%20Tudo%20bem%3F%0AEncontrei%20a%20ELETTRA%20Engenharia%20%26%20Solu%C3%A7%C3%B5es%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20oferecidos%2C%20especialmente%20em%20projetos%20e%20execu%C3%A7%C3%A3o%20de%20obras%20el%C3%A9tricas%2Fcivis.%0APoderia%20me%20orientar%3F"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex items-center space-x-1 xs:space-x-2 btn-primary text-xs sm:text-sm md:text-base px-3 xs:px-4 py-2 xs:py-3"
+              className="hidden sm:flex items-center space-x-1 xs:space-x-2 bg-secondary-green hover:bg-green-600 text-white font-semibold rounded-lg transition-colors text-xs sm:text-sm md:text-base px-3 xs:px-4 py-2 xs:py-3"
             >
               <MessageCircle size={16} className="xs:w-4 xs:h-4 sm:w-4.5 sm:h-4.5" />
               <span className="hidden xs:inline">Fale Conosco</span>
