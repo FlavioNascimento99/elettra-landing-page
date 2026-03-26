@@ -1,5 +1,11 @@
 // API configuration and utilities
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+// In development: http://localhost:5000
+// In production (Vercel): /api (serverless functions)
+const API_URL = import.meta.env.VITE_API_URL || (
+  typeof window !== 'undefined' && window.location.hostname === 'localhost'
+    ? 'http://localhost:5000'
+    : '/api'
+);
 
 export interface EmailPayload {
   name: string;
