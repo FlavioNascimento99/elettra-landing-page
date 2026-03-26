@@ -3,7 +3,7 @@ import { MessageCircle } from 'lucide-react';
 
 export default function FloatingWhatsApp() {
   const whatsappLink =
-    'https://wa.me/5583996070404?text=Olá%20ELETTRA,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20projeto.';
+    'https://wa.me/5583996070404?text=Olá%21%20Tudo%20bem%3F%0AEncontrei%20a%20ELETTRA%20Engenharia%20%26%20Solu%C3%A7%C3%B5es%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20oferecidos%2C%20especialmente%20em%20projetos%20e%20execu%C3%A7%C3%A3o%20de%20obras%20el%C3%A9tricas%2Fcivis.%0APoderia%20me%20orientar%3F';
 
   return (
     <motion.a

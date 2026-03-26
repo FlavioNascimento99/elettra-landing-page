@@ -1,15 +1,18 @@
 import { motion } from 'framer-motion';
 import { Mail, MapPin, MessageCircle, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
+import { sendEmail } from '../services/emailService';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
+    email: '',
     phone: '',
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -19,16 +22,31 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError(null);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      await sendEmail({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+      });
+
       setSubmitSuccess(true);
-      setFormData({ name: '', phone: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', message: '' });
 
-      // Reset success message after 3 seconds
-      setTimeout(() => setSubmitSuccess(false), 3000);
-    }, 500);
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitSuccess(false), 5000);
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'Erro ao enviar mensagem. Tente novamente ou entre em contato via WhatsApp.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const containerVariants = {
@@ -131,7 +149,7 @@ export default function ContactSection() {
               {/* CTA Buttons */}
               <motion.div variants={itemVariants} className="space-y-3 mt-8 pt-8 border-t border-neutral-border">
                 <a
-                  href="https://wa.me/5583996070404?text=Olá%20ELETTRA,%20gostaria%20de%20solicitar%20um%20orçamento"
+                  href="https://wa.me/5583996070404?text=Olá%21%20Tudo%20bem%3F%0AEncontrei%20a%20ELETTRA%20Engenharia%20%26%20Solu%C3%A7%C3%B5es%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20oferecidos%2C%20especialmente%20em%20projetos%20e%20execu%C3%A7%C3%A3o%20de%20obras%20el%C3%A9tricas%2Fcivis.%0APoderia%20me%20orientar%3F"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-2 btn-primary w-full"
@@ -164,6 +182,22 @@ export default function ContactSection() {
                     onChange={handleChange}
                     required
                     placeholder="Seu nome completo"
+                    className="w-full px-3 xs:px-4 py-3 text-base rounded-lg border border-neutral-border focus:border-primary-main focus:outline-none focus:ring-2 focus:ring-primary-main/20 transition-all\"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-xs xs:text-sm font-semibold text-primary-dark mb-2\">
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    placeholder="seu.email@exemplo.com"
                     className="w-full px-3 xs:px-4 py-3 text-base rounded-lg border border-neutral-border focus:border-primary-main focus:outline-none focus:ring-2 focus:ring-primary-main/20 transition-all\"
                   />
                 </div>
@@ -227,7 +261,18 @@ export default function ContactSection() {
                     exit={{ opacity: 0 }}
                     className="p-4 bg-secondary-green/10 border border-secondary-green text-secondary-green rounded-lg text-sm font-medium text-center"
                   >
-                    Mensagem enviada com sucesso! Entraremos em contato em breve.
+                    ✓ Mensagem enviada com sucesso! Entraremos em contato em breve.
+                  </motion.div>
+                )}
+
+                {submitError && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm font-medium text-center"
+                  >
+                    ✕ {submitError}
                   </motion.div>
                 )}
               </form>
