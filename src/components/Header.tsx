@@ -43,7 +43,7 @@ export default function Header() {
             </div>
             <div className="min-w-0">
               <p className="font-bold text-primary-dark text-xs xs:text-sm sm:text-base md:text-base truncate">ELETTRA</p>
-              <p className="text-xs md:text-xs text-neutral-dark/60 leading-tight">Engenharia</p>
+              <p className="text-xs md:text-xs text-neutral-dark/60 leading-tight">Empreendimentos</p>
             </div>
           </div>
 
