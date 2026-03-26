@@ -1,11 +1,5 @@
-// API configuration and utilities
-// In development: http://localhost:5000
-// In production (Vercel): /api (serverless functions)
-const API_URL = import.meta.env.VITE_API_URL || (
-  typeof window !== 'undefined' && window.location.hostname === 'localhost'
-    ? 'http://localhost:5000'
-    : '/api'
-);
+// Formspree configuration
+const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID || 'mykbzgrr';
 
 export interface EmailPayload {
   name: string;
@@ -21,39 +15,62 @@ export interface ApiResponse {
 }
 
 /**
- * Send email through the backend API
+ * Sanitiza strings para evitar injeção
  */
-export async function sendEmail(data: EmailPayload): Promise<ApiResponse> {
-  try {
-    const response = await fetch(`${API_URL}/send-email`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-
-    const result: ApiResponse = await response.json();
-
-    if (!response.ok) {
-      throw new Error(result.message || 'Erro ao enviar email');
-    }
-
-    return result;
-  } catch (error) {
-    console.error('Email API Error:', error);
-    throw error;
-  }
+function sanitizeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;');
 }
 
 /**
- * Check if the email server is running
+ * Send email through Formspree directly from frontend
  */
-export async function checkEmailServerHealth(): Promise<boolean> {
+export async function sendEmail(data: EmailPayload): Promise<ApiResponse> {
   try {
-    const response = await fetch(`${API_URL}/health`);
-    return response.ok;
-  } catch {
-    return false;
+    // Validação básica
+    if (!data.name?.trim()) throw new Error('Nome é obrigatório');
+    if (!data.email?.trim()) throw new Error('Email é obrigatório');
+    if (!data.phone?.trim()) throw new Error('Telefone é obrigatório');
+    if (!data.message?.trim()) throw new Error('Mensagem é obrigatória');
+
+    const sanitizedData = {
+      name: sanitizeHtml(data.name),
+      email: sanitizeHtml(data.email),
+      phone: sanitizeHtml(data.phone),
+      message: sanitizeHtml(data.message),
+      _subject: `Novo Contato - ${data.name}`,
+      _replyto: data.email,
+    };
+
+    const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify(sanitizedData),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Formspree error: ${response.statusText}`);
+    }
+
+    const result = await response.json();
+
+    if (!result.ok) {
+      throw new Error('Erro ao enviar formulário');
+    }
+
+    return {
+      success: true,
+      message: 'Mensagem enviada com sucesso! Você receberá uma confirmação por email.',
+    };
+  } catch (error) {
+    console.error('Email Service Error:', error);
+    throw error;
   }
 }
