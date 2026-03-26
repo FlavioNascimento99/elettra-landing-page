@@ -49,7 +49,7 @@ export default function HeroSection() {
           <motion.div variants={itemVariants} className="inline-block mb-4 xs:mb-6">
             <span className="inline-flex items-center space-x-1.5 xs:space-x-2 bg-secondary-lightBlue/20 text-primary-main px-3 xs:px-4 py-1.5 xs:py-2 rounded-full text-xs xs:text-sm font-semibold">
               <Zap size={14} className="xs:w-4 xs:h-4" />
-              <span className="hidden xs:inline">Soluções Completas em Engenharia</span>
+              <span className="hidden xs:inline">Soluções Completas em Empreendimentos</span>
               <span className="xs:hidden">Soluções</span>
             </span>
           </motion.div>
@@ -60,7 +60,7 @@ export default function HeroSection() {
             className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-dark mb-4 xs:mb-6 leading-tight"
           >
             ELETTRA
-            <span className="block text-primary-main mt-1 xs:mt-2">Engenharia & Soluções</span>
+            <span className="block text-primary-main mt-1 xs:mt-2">Empreendimentos & Soluções</span>
           </motion.h1>
 
           {/* Subtitle */}
