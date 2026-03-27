@@ -130,6 +130,14 @@ export default function Footer() {
           <p className="text-white/60 text-sm mb-4 md:mb-0">
             © {currentYear} ELETTRA Engenharia & Soluções. Todos os direitos reservados.
           </p>
+            <a
+            href="https://nascimentohub.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/60 hover:text-white transition-colors text-sm mb-4 md:mb-0"
+            >
+            Desenvolvido por Flavio Nascimento
+            </a>
           <div className="flex items-center space-x-6 text-sm">
             <a href="#" className="text-white/60 hover:text-white transition-colors">
               Política de Privacidade
