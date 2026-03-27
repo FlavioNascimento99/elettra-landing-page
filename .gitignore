@@ -51,3 +51,9 @@ Thumbs.db
 # Backend/Test files
 test-backend.log
 *.test.log
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
