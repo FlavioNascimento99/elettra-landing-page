@@ -49,7 +49,7 @@ export default function HeroSection() {
           <motion.div variants={itemVariants} className="inline-block mb-4 xs:mb-6">
             <span className="inline-flex items-center space-x-1.5 xs:space-x-2 bg-secondary-lightBlue/20 text-primary-main px-3 xs:px-4 py-1.5 xs:py-2 rounded-full text-xs xs:text-sm font-semibold">
               <Zap size={14} className="xs:w-4 xs:h-4" />
-              <span className="hidden xs:inline">Soluções Completas em Engenharia</span>
+              <span className="hidden xs:inline">Soluções Completas em Empreendimentos</span>
               <span className="xs:hidden">Soluções</span>
             </span>
           </motion.div>
@@ -60,7 +60,7 @@ export default function HeroSection() {
             className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-dark mb-4 xs:mb-6 leading-tight"
           >
             ELETTRA
-            <span className="block text-primary-main mt-1 xs:mt-2">Engenharia & Soluções</span>
+            <span className="block text-primary-main mt-1 xs:mt-2">Empreendimentos & Soluções</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -89,7 +89,7 @@ export default function HeroSection() {
               <ArrowRight size={16} className="xs:w-4.5 xs:h-4.5" />
             </button>
             <a
-              href="https://wa.me/5583996070404?text=Olá%20ELETTRA,%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços"
+              href="https://wa.me/5583996070404?text=Olá%21%20Tudo%20bem%3F%0AEncontrei%20a%20ELETTRA%20Engenharia%20%26%20Solu%C3%A7%C3%B5es%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20oferecidos%2C%20especialmente%20em%20projetos%20e%20execu%C3%A7%C3%A3o%20de%20obras%20el%C3%A9tricas%2Fcivis.%0APoderia%20me%20orientar%3F"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary w-full xs:w-auto justify-center text-sm xs:text-base py-2.5 xs:py-3"
