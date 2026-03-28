@@ -66,22 +66,22 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:wagnerrclemente@gmail.com"
+                  href="mailto:contato@elettraengenharia.com.br"
                   className="flex items-center space-x-2 text-white/70 hover:text-white transition-colors text-sm"
                 >
                   <Mail size={16} />
-                  <span className="break-all">wagnerrclemente@gmail.com</span>
+                  <span className="break-all">contato@elettraengenharia.com.br</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="https://maps.google.com/?q=Rua+Hortêncio+Ribeiro+de+Luna,+1151,+João+Pessoa,+PB"
+                  href="https://maps.google.com/?q=Rua+Bento+Ribeiro+de+Assis,+Serra+Branca,+PB"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start space-x-2 text-white/70 hover:text-white transition-colors text-sm"
                 >
                   <MapPin size={16} className="flex-shrink-0 mt-0.5" />
-                  <span>João Pessoa – PB</span>
+                  <span>Serra Branca – PB</span>
                 </a>
               </li>
             </ul>
@@ -110,7 +110,7 @@ export default function Footer() {
                 <Facebook size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/elettraempreendimentos/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center bg-white/10 rounded-lg hover:bg-secondary-green transition-colors"

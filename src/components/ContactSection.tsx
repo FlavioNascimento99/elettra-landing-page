@@ -73,8 +73,8 @@ export default function ContactSection() {
     {
       icon: MapPin,
       label: 'Endereço',
-      content: 'Rua Hortêncio Ribeiro de Luna, 1151 – BR 101\nJoão Pessoa – PB',
-      link: 'https://maps.google.com/?q=Rua+Hortêncio+Ribeiro+de+Luna,+1151,+João+Pessoa,+PB',
+      content: 'Rua Bento Ribeiro de Assis, s/n, centro\nSerra Branca – PB',
+      link: 'https://maps.google.com/?q=Rua+Bento+Ribeiro+de+Assis,+Serra+Branca,+PB',
     },
     {
       icon: Phone,
@@ -85,8 +85,8 @@ export default function ContactSection() {
     {
       icon: Mail,
       label: 'Email',
-      content: 'wagnerrclemente@gmail.com',
-      link: 'mailto:wagnerrclemente@gmail.com',
+      content: 'contato@elettraengenharia.com.br',
+      link: 'mailto:contato@elettraengenharia.com.br',
     },
   ];
 

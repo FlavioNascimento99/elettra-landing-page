@@ -148,8 +148,8 @@ export default defineConfig({
 ## 📞 Contato
 
 - **Telefone**: (83) 99607-0404
-- **Email**: wagnerrclemente@gmail.com
-- **Endereço**: Rua Hortêncio Ribeiro de Luna, 1151 – BR 101, João Pessoa – PB
+- **Email**: contato@elettraengenharia.com.br
+- **Endereço**: Rua Bento Ribeiro de Assis, s/n, centro, Serra Branca - PB
 
 ## 📄 Licença
 

@@ -70,9 +70,9 @@ src/
 
 ### Contact Information (Hardcoded)
 - **Phone**: (83) 99607-0404
-- **Email**: wagnerrclemente@gmail.com
+- **Email**: contato@elettraengenharia.com.br
 - **WhatsApp**: Direct integration via wa.me URL
-- **Address**: Rua Hortêncio Ribeiro de Luna, 1151 – BR 101, João Pessoa – PB
+- **Address**: Rua Bento Ribeiro de Assis, s/n, centro, Serra Branca - PB
 
 ### Performance Optimization Notes
 - Lazy loading ready (scroll animations)
