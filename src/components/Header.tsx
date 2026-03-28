@@ -37,14 +37,12 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-14 xs:h-16 sm:h-18 md:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-1 xs:space-x-2 cursor-pointer" onClick={() => scrollToSection('home')}>
-            <div className="w-7 xs:w-8 sm:w-9 md:w-10 h-7 xs:h-8 sm:h-9 md:h-10 bg-gradient-to-br from-primary-main to-primary-dark rounded-lg flex items-center justify-center flex-shrink-0">
-              <span className="text-white font-bold text-sm xs:text-base sm:text-lg md:text-lg">E</span>
-            </div>
-            <div className="min-w-0">
-              <p className="font-bold text-primary-dark text-xs xs:text-sm sm:text-base md:text-base truncate">ELETTRA</p>
-              <p className="text-xs md:text-xs text-neutral-dark/60 leading-tight">Empreendimentos</p>
-            </div>
+          <div className="flex items-center space-x-2 xs:space-x-2.5 cursor-pointer" onClick={() => scrollToSection('home')}>
+            <img 
+              src="/src/assets/logo.jpg" 
+              alt="ELETTRA Logo" 
+              className="h-7 xs:h-8 sm:h-9 md:h-10 w-auto object-contain flex-shrink-0"
+            />
           </div>
 
           {/* Desktop Navigation */}
