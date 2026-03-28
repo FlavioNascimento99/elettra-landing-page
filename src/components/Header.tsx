@@ -39,7 +39,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center space-x-2 xs:space-x-2.5 cursor-pointer" onClick={() => scrollToSection('home')}>
             <img 
-              src="/src/assets/logo.jpg" 
+              src="/assets/logo.jpg" 
               alt="ELETTRA Logo" 
               className="h-7 xs:h-8 sm:h-9 md:h-10 w-auto object-contain flex-shrink-0"
             />

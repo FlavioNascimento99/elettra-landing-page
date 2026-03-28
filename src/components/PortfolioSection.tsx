@@ -1,47 +1,41 @@
 import { motion } from 'framer-motion';
-import projetoSubestacao from '../assets/projeto_subestacao.jpg';
-import solarResidencial from '../assets/solar_residencial.jpg';
-import redeEletrica from '../assets/rede_eletrica.png';
-import obraCivil from '../assets/obra_civil.jpg';
-import automacaoIndustrial from '../assets/automacao_industrial.jpg';
-import segurancaTrabalho from '../assets/seguranca_trabalho.jpg';
 
 const portfolioProjects = [
   { 
     id: 1, 
     title: 'Projeto de Subestação', 
     category: 'Infraestrutura',
-    image: projetoSubestacao
+    image: '/assets/projeto_subestacao.jpg'
   },
   { 
     id: 2, 
     title: 'Instalação Solar Residencial', 
     category: 'Energia Renovável',
-    image: solarResidencial
+    image: '/assets/solar_residencial.jpg'
   },
   { 
     id: 3, 
     title: 'Ampliação de Rede Elétrica', 
     category: 'Distribuição',
-    image: redeEletrica
+    image: '/assets/rede_eletrica.png'
   },
   { 
     id: 4, 
     title: 'Obra Civil Integrada', 
     category: 'Construção',
-    image: obraCivil
+    image: '/assets/obra_civil.jpg'
   },
   { 
     id: 5, 
     title: 'Sistema de Automação Industrial', 
     category: 'Automação',
-    image: automacaoIndustrial
+    image: '/assets/automacao_industrial.jpg'
   },
   { 
     id: 6, 
     title: 'Auditoria de Segurança do Trabalho', 
     category: 'Segurança',
-    image: segurancaTrabalho
+    image: '/assets/seguranca_trabalho.jpg'
   },
 ];
 
