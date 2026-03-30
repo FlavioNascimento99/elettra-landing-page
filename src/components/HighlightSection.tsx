@@ -53,7 +53,7 @@ export default function HighlightSection() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="mt-12 grid grid-cols-3 gap-4 md:gap-8"
+            className="mt-12 flex justify-center gap-12 md:gap-20"
           >
             {[
               { number: '+12', label: 'Anos de Experiência' },
