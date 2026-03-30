@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 import {
-    Building2,
-    Zap as ElectricBolt,
-    Hammer,
-    Leaf,
-    Lightbulb,
-    Shield,
-    TrendingUp,
-    Zap,
+  Building2,
+  Zap as ElectricBolt,
+  Hammer,
+  Leaf,
+  Lightbulb,
+  Shield,
+  TrendingUp,
+  Zap,
 } from 'lucide-react';
 
 const services = [
@@ -20,7 +20,7 @@ const services = [
       'Redes MT e BT',
       'Subestações',
       'Automação',
-      'Geração distribuída',
+      'Energia Fotovoltaica -  Micro e minigerção',
       'Testes técnicos: Termografia, Resistência de contato, Isolamento, TTR, Análise de óleo',
     ],
   },
@@ -32,13 +32,13 @@ const services = [
       'Projetos eletromecânicos',
       'Construção e ampliação',
       'Instalação de equipamentos',
-      'Painéis de comando',
-      'Ensaios e manutenção',
+      'Painéis de comando e controle',
+      'Automação',
     ],
   },
   {
     icon: Zap,
-    title: '🔌 Linhas e Redes de Distribuição',
+    title: '🔌 Redes de distribuição em média e baixa tensão',
     description: 'Infraestrutura de distribuição de energia',
     items: [
       'Construção e reforma',
@@ -50,8 +50,8 @@ const services = [
   },
   {
     icon: Lightbulb,
-    title: '☀️ Energia Solar Fotovoltaica',
-    description: 'Soluções de energia renovável',
+    title: '☀️ Energia Fotovoltaica',
+    description: 'Soluções em energia renovável',
     items: [
       'Projetos de micro e minigeração',
       'Dimensionamento técnico e econômico',
@@ -59,6 +59,7 @@ const services = [
       'Homologação',
       'Manutenção',
       'Consultoria energética',
+      'Dimensionamento e instalação de carregadores para veículos elétricos'
     ],
   },
   {
@@ -70,7 +71,6 @@ const services = [
       'Análise de consumo',
       'Redução de demanda',
       'Soluções para empresas e condomínios',
-      'Cálculo de ROI',
     ],
   },
   {
@@ -79,27 +79,36 @@ const services = [
     description: 'Execução de obras estruturais',
     items: [
       'Reformas',
-      'Obras de pequeno porte',
       'Redes de água e esgoto',
-      'Obras em subestações',
       'Pavimentação',
     ],
   },
   {
     icon: Shield,
-    title: '🦺 Segurança do Trabalho',
-    description: 'Conformidade e proteção ocupacional',
+    title: '🦺 Testes e ensaios em equipamentos',
+    description: 'Manutenção industrial',
     items: [
-      'PGR (Programa de Gestão de Riscos)',
-      'PCMSO (Programa de Controle Médico)',
-      'LTCAT (Laudo Técnico)',
-      'Laudos técnicos',
-      'APR (Análise Preliminar de Riscos)',
-      'Permissão de Trabalho',
-      'Treinamentos: NR-10, NR-35, NR-33',
-      'Gestão de SST',
+      'Termografia',
+      'Resistência de contato',
+      'Resistência de isolamento',
+      'Análise de óleo',
+      'Ajustes de proteção em relés',
+      'Manutenção em painéis e circuitos elétricos'
     ],
   },
+  {
+    icon: Shield,
+    title: '⚒️ Segurança do Trabalho',
+    description: 'Conformidade e proteção ocupacional',
+    items: [
+      'Programa de Gerenciamento de Riscos',
+      'PCMSO em Parceria Médica',
+      'LTCAT Laudo Técnico das Condições e Ambiente do Trabalho',
+      'PAE Plano de Atendimento à Emergência',
+      'Treinamentos',
+      'Gestão de SST'
+    ]
+  }
 ];
 
 export default function ServicesSection() {

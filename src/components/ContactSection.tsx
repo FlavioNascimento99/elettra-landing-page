@@ -73,7 +73,7 @@ export default function ContactSection() {
     {
       icon: MapPin,
       label: 'Endereço',
-      content: 'Rua Bento Ribeiro de Assis, s/n, centro\nSerra Branca – PB',
+      content: 'Rua Bento Ribeiro de Assis, s/n, \nSerra Branca – PB',
       link: 'https://maps.google.com/?q=Rua+Bento+Ribeiro+de+Assis,+Serra+Branca,+PB',
     },
     {
@@ -190,7 +190,7 @@ export default function ContactSection() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    placeholder="seu.email@exemplo.com"
+                    placeholder="Insira seu email para contato"
                     className="w-full px-3 xs:px-4 py-3 text-base rounded-lg border border-neutral-border focus:border-primary-main focus:outline-none focus:ring-2 focus:ring-primary-main/20 transition-all\"
                   />
                 </div>
@@ -206,7 +206,7 @@ export default function ContactSection() {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    placeholder="(83) 99607-0404"
+                    placeholder="Insira seu telefone para contato"
                     className="w-full px-3 xs:px-4 py-3 text-base rounded-lg border border-neutral-border focus:border-primary-main focus:outline-none focus:ring-2 focus:ring-primary-main/20 transition-all"
                   />
                 </div>
@@ -269,10 +269,6 @@ export default function ContactSection() {
                   </motion.div>
                 )}
               </form>
-
-              <p className="text-xs text-neutral-dark/50 mt-4 text-center">
-                * Campos obrigatórios. Responderemos em até 24 horas.
-              </p>
             </motion.div>
           </div>
         </motion.div>

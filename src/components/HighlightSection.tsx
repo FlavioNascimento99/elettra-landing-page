@@ -57,7 +57,6 @@ export default function HighlightSection() {
           >
             {[
               { number: '+12', label: 'Anos de Experiência' },
-              { number: '+500', label: 'Projetos Realizados' },
               { number: '100%', label: 'Conformidade' },
             ].map((stat, index) => (
               <div key={index} className="text-center">

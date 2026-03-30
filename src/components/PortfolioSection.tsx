@@ -3,38 +3,38 @@ import { motion } from 'framer-motion';
 const portfolioProjects = [
   { 
     id: 1, 
-    title: 'Projeto de Subestação', 
+    title: 'Subestações', 
     category: 'Infraestrutura',
     image: '/assets/projeto_subestacao.jpg'
   },
   { 
     id: 2, 
-    title: 'Instalação Solar Residencial', 
+    title: 'Energia Fotovoltaica', 
     category: 'Energia Renovável',
     image: '/assets/solar_residencial.jpg'
   },
   { 
     id: 3, 
-    title: 'Ampliação de Rede Elétrica', 
-    category: 'Distribuição',
+    title: 'Ampliação e reforma da Rede Elétrica', 
+    category: 'Redes de média e baixa tensão',
     image: '/assets/rede_eletrica.png'
   },
   { 
     id: 4, 
-    title: 'Obra Civil Integrada', 
-    category: 'Construção',
+    title: 'Obra Civis', 
+    category: 'Construção e Reformas',
     image: '/assets/obra_civil.jpg'
   },
   { 
     id: 5, 
-    title: 'Sistema de Automação Industrial', 
+    title: 'Automações de Subestações', 
     category: 'Automação',
     image: '/assets/automacao_industrial.jpg'
   },
   { 
     id: 6, 
-    title: 'Auditoria de Segurança do Trabalho', 
-    category: 'Segurança',
+    title: 'Segurança do Trabalho', 
+    category: 'Gestão de Segurança e Saúde do Trabalho',
     image: '/assets/seguranca_trabalho.jpg'
   },
 ];
