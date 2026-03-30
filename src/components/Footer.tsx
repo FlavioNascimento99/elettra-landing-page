@@ -131,7 +131,7 @@ export default function Footer() {
             © {currentYear} ELETTRA Engenharia & Soluções. Todos os direitos reservados.
           </p>
             <a
-            href="https://nascimentohub.netlify.app/"
+            href="http://onascimento.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white/60 hover:text-white transition-colors text-sm mb-4 md:mb-0"
