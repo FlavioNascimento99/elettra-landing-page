@@ -1,11 +1,17 @@
 import { motion } from 'framer-motion';
 
-const clients = [
+interface Logo {
+  id: number;
+  name: string;
+  logo: string;
+}
+
+const clients: Logo[] = [
   // Adicione as logos dos clientes aqui conforme adicionadas em public/assets/clients/
   // Exemplo: { id: 1, name: 'Client Name', logo: '/assets/clients/client1.png' }
 ];
 
-const partners = [
+const partners: Logo[] = [
   // Adicione as logos dos parceiros aqui conforme adicionadas em public/assets/partners/
   // Exemplo: { id: 1, name: 'Partner Name', logo: '/assets/partners/partner1.png' }
 ];
