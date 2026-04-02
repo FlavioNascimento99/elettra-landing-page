@@ -6,15 +6,15 @@ interface Logo {
   logo: string;
 }
 
-const clients: Logo[] = [
+const clients = [
   // Adicione as logos dos clientes aqui conforme adicionadas em public/assets/clients/
   // Exemplo: { id: 1, name: 'Client Name', logo: '/assets/clients/client1.png' }
-];
+] satisfies Logo[];
 
-const partners: Logo[] = [
+const partners = [
   // Adicione as logos dos parceiros aqui conforme adicionadas em public/assets/partners/
   // Exemplo: { id: 1, name: 'Partner Name', logo: '/assets/partners/partner1.png' }
-];
+] satisfies Logo[];
 
 export default function ClientsAndPartnersSection() {
   const containerVariants = {
