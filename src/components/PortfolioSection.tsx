@@ -1,43 +1,128 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const portfolioProjects = [
   { 
     id: 1, 
-    title: 'Subestações', 
+    title: 'Reforma de Subestações', 
     category: 'Infraestrutura',
-    image: '/assets/projeto_subestacao.jpg'
+    images: ['/assets/reforma_substacoes (1).png', '/assets/reforma_substacoes (2).png']
   },
   { 
     id: 2, 
-    title: 'Energia Fotovoltaica', 
+    title: 'Usinas Fotovoltaicas', 
     category: 'Energia Renovável',
-    image: '/assets/solar_residencial.jpg'
+    images: ['/assets/usinas_fotovoltaicas (1).png', '/assets/usinas_fotovoltaicas (2).png']
   },
   { 
     id: 3, 
     title: 'Ampliação e reforma da Rede Elétrica', 
     category: 'Redes de média e baixa tensão',
-    image: '/assets/rede_eletrica.png'
+    images: ['/assets/reforma_redes_distribuicao.png']
   },
   { 
     id: 4, 
-    title: 'Obra Civis', 
+    title: 'Loteamento', 
     category: 'Construção e Reformas',
-    image: '/assets/obra_civil.jpg'
+    images: ['/assets/loteamento.png']
   },
   { 
     id: 5, 
     title: 'Automações de Subestações', 
     category: 'Automação',
-    image: '/assets/automacao_industrial.jpg'
+    images: ['/assets/automacao_ substacoes (1).png', '/assets/automacao_ substacoes (2).png']
   },
   { 
     id: 6, 
-    title: 'Segurança do Trabalho', 
+    title: 'Manutenção Industrial', 
     category: 'Gestão de Segurança e Saúde do Trabalho',
-    image: '/assets/seguranca_trabalho.jpg'
+    images: ['/assets/manutencao_industrial (1).png', '/assets/manutencao_industrial (2).png', '/assets/manutencao_industrial (3).png']
   },
 ];
+
+// Componente para o card do portfólio com carrossel
+function PortfolioCard({ project }: { project: typeof portfolioProjects[0] }) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const goToPrevious = () => {
+    setCurrentImageIndex((prev) =>
+      prev === 0 ? project.images.length - 1 : prev - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentImageIndex((prev) =>
+      prev === project.images.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.6 },
+    },
+  };
+
+  return (
+    <motion.div
+      variants={itemVariants}
+      whileHover={{ y: -8 }}
+      className="group relative overflow-hidden rounded-xl bg-white border border-neutral-border cursor-pointer"
+    >
+      {/* Image Area com Carrossel */}
+      <div className="relative overflow-hidden bg-neutral-light h-48">
+        <img
+          key={currentImageIndex}
+          src={project.images[currentImageIndex]}
+          alt={project.title}
+          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500 animate-fadeIn"
+        />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+
+        {/* Navigation Buttons - Mostro apenas se houver múltiplas imagens */}
+        {project.images.length > 1 && (
+          <>
+            {/* Botão Anterior */}
+            <button
+              onClick={goToPrevious}
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary-dark rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
+              aria-label="Imagem anterior"
+            >
+              <ChevronLeft size={20} />
+            </button>
+
+            {/* Botão Próximo */}
+            <button
+              onClick={goToNext}
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary-dark rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
+              aria-label="Próxima imagem"
+            >
+              <ChevronRight size={20} />
+            </button>
+
+            {/* Indicador de Página */}
+            <div className="absolute bottom-3 right-3 bg-black/60 text-white px-2 py-1 rounded text-xs font-semibold">
+              {currentImageIndex + 1}/{project.images.length}
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* Content */}
+      <div className="p-4 md:p-6">
+        <div className="flex items-start justify-between mb-2">
+          <h3 className="text-lg font-bold text-primary-dark group-hover:text-secondary-green transition-colors flex-1">
+            {project.title}
+          </h3>
+        </div>
+        <p className="text-sm text-secondary-green font-semibold">{project.category}</p>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function PortfolioSection() {
   const containerVariants = {
@@ -85,32 +170,7 @@ export default function PortfolioSection() {
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {portfolioProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                variants={itemVariants}
-                whileHover={{ y: -8 }}
-                className="group relative overflow-hidden rounded-xl bg-white border border-neutral-border cursor-pointer"
-              >
-                {/* Image Area */}
-                <div className="relative overflow-hidden bg-neutral-light">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
-                </div>
-
-                {/* Content */}
-                <div className="p-4 md:p-6">
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-lg font-bold text-primary-dark group-hover:text-secondary-green transition-colors flex-1">
-                      {project.title}
-                    </h3>
-                  </div>
-                  <p className="text-sm text-secondary-green font-semibold">{project.category}</p>
-                </div>
-              </motion.div>
+              <PortfolioCard key={project.id} project={project} />
             ))}
           </motion.div>
 

@@ -1,4 +1,5 @@
 import AboutSection from './components/AboutSection';
+import ClientsAndPartnersSection from './components/ClientsAndPartnersSection';
 import ContactSection from './components/ContactSection';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import Footer from './components/Footer';
@@ -18,6 +19,7 @@ function App() {
         <ServicesSection />
         <HighlightSection />
         <PortfolioSection />
+        <ClientsAndPartnersSection />
         <ContactSection />
       </main>
       <Footer />
