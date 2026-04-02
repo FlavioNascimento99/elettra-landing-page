@@ -7,14 +7,15 @@ interface Logo {
 }
 
 const clients = [
-  // Adicione as logos dos clientes aqui conforme adicionadas em public/assets/clients/
-  // Exemplo: { id: 1, name: 'Client Name', logo: '/assets/clients/client1.png' }
-] satisfies Logo[];
+  { id: 1, name: 'Cliente 1', logo: '/assets/clients/cliente1.jpg' },
+  { id: 2, name: 'Cliente 2', logo: '/assets/clients/cliente2.png' },
+  { id: 3, name: 'Cliente 3', logo: '/assets/clients/cliente3.png' },
+] as Logo[];
 
 const partners = [
-  // Adicione as logos dos parceiros aqui conforme adicionadas em public/assets/partners/
-  // Exemplo: { id: 1, name: 'Partner Name', logo: '/assets/partners/partner1.png' }
-] satisfies Logo[];
+  { id: 1, name: 'Parceiro 1', logo: '/assets/partners/parceiro1.png' },
+  { id: 2, name: 'Parceiro 2', logo: '/assets/partners/parceiro2.png' },
+] as Logo[];
 
 export default function ClientsAndPartnersSection() {
   const containerVariants = {
