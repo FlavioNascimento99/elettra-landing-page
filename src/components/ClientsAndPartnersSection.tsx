@@ -48,7 +48,7 @@ export default function ClientsAndPartnersSection() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-12 md:py-16 bg-white">
       <div className="section-container">
         <motion.div
           initial="hidden"
@@ -68,16 +68,16 @@ export default function ClientsAndPartnersSection() {
 
           {/* Clients Section */}
           {clients.length > 0 && (
-            <motion.div variants={containerVariants} className="mb-16">
+            <motion.div variants={containerVariants} className="mb-8">
               <motion.h3
                 variants={itemVariants}
-                className="text-2xl font-bold text-primary-dark mb-8"
+                className="text-2xl font-bold text-primary-dark mb-8 text-center"
               >
                 Nossos Clientes
               </motion.h3>
               <motion.div
                 variants={containerVariants}
-                className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+                className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center mx-auto"
               >
                 {clients.map((client) => (
                   <motion.div
@@ -103,13 +103,13 @@ export default function ClientsAndPartnersSection() {
             <motion.div variants={containerVariants}>
               <motion.h3
                 variants={itemVariants}
-                className="text-2xl font-bold text-primary-dark mb-8"
+                className="text-2xl font-bold text-primary-dark mb-8 text-center"
               >
                 Nossos Parceiros
               </motion.h3>
               <motion.div
                 variants={containerVariants}
-                className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+                className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center mx-auto"
               >
                 {partners.map((partner) => (
                   <motion.div
